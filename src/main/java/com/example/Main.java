@@ -51,6 +51,26 @@ public class Main {
 
         System.out.println("Partitioned cars: " + partitionedCars);
 
+        //
+        Map<String, Map<String, Integer>> groupedCars = cars.stream().collect(
+                Collectors.groupingBy(Car::type, Collectors.toMap(Car::make, Car::engineCapacity)));
+
+        // Processes cars using multiple CPU cores simultaneously
+        long count = cars.parallelStream()
+                .filter(car -> car.engineCapacity() > 2000)
+                .count();
+
+        System.out.println("Count:" + count);
+
+        List<String> result = cars.stream()
+                .parallel() // It performs some operations in parallel utilizing multiple CPU cores
+                .filter(car -> car.engineCapacity() > 1500)
+                .sequential() // Switch the stream back to sequential mode
+                .map(Car::make)
+                .toList();
+
+        System.out.println("Result:" + result);
+
     }
 
 }
