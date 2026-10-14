@@ -1,4 +1,4 @@
-package com.example;
+package com.example.helloworld;
 
 /* 
 Class HelloWorld
