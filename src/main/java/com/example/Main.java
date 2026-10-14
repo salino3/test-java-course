@@ -2,6 +2,7 @@
 package com.example;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -43,7 +44,12 @@ public class Main {
             return i % 2 == 0;
         });
 
-        System.out.println("Count = " + filteredIntegerStream.toList());
+        System.out.println("Count: " + filteredIntegerStream.toList());
+
+        Map<Boolean, List<Car>> partitionedCars = cars.stream()
+                .collect(Collectors.partitioningBy(car -> car.type.equals("sedan")));
+
+        System.out.println("Partitioned cars: " + partitionedCars);
 
     }
 
