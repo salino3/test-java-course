@@ -1,6 +1,10 @@
 package com.example.helloworld;
 
 public class Exercise01 {
+    public static void main(String[] args) {
+
+        System.out.println(getGrade(90));
+    }
     // Esercizio:
     // Ecco un
     // esercizio rapido
@@ -30,6 +34,9 @@ public class Exercise01 {
     // Mettilo alla prova nel main con qualche numero!
 
     public static String getGrade(int score) {
-        return "";
+        if (score > 100 || score < 0)
+            return "Invalid";
+        else
+            return "-";
     }
 }
