@@ -1,7 +1,6 @@
 package com.example.helloworld;
 
-import java.util.HashMap;
-
+import java.util.LinkedHashMap;
 import java.util.Map;
 // Declaración de un Map (un HashMap) con clave "Integer" y Valor "String". Las claves pueden ser de cualquier tipo de objetos,
 //  aunque los más utilizados como clave son los objetos predefinidos de Java como String, Integer, Double ... !!!!CUIDADO los Map no permiten datos atómicos
@@ -17,15 +16,20 @@ import java.util.Map;
 // nombreMap.values(); // Devuelve una "Collection" con los valores del Map
 
 public class Exercise01 {
-    public static void main(String[] args) {
-        Map<Integer, String> grades = new HashMap<Integer, String>();
-        grades.put(100, "A");
-        grades.put(90, "B");
-        grades.put(80, "C");
-        grades.put(70, "D");
-        grades.put(60, "E");
+    // 'LinkedHashMap' respects the order of the objects
+    // 'HashMap' use random order for his objects
+    static Map<String, Integer> grades = new LinkedHashMap<String, Integer>();
 
-        System.out.println(getGrade(90));
+    public static void main(String[] args) {
+        grades.put("A", 90);
+        grades.put("B", 80);
+        grades.put("C", 70);
+        grades.put("D", 60);
+        grades.put("E", 50);
+
+        System.out.println(getGrade(100
+
+        ));
     }
     // Esercizio:
     // Ecco un
@@ -60,7 +64,13 @@ public class Exercise01 {
     public static String getGrade(int score) {
         if (score > 100 || score < 0)
             return "Invalid";
-        else
-            return "-";
+
+        for (String grade : grades.keySet()) {
+            if (score >= grades.get(grade)) {
+                return grade;
+            }
+        }
+
+        return "F";
     }
 }
