@@ -27,9 +27,7 @@ public class Exercise01 {
         grades.put("D", 60);
         grades.put("E", 50);
 
-        System.out.println(getGrade(100
-
-        ));
+        System.out.println(getGrade(100));
     }
     // Esercizio:
     // Ecco un
