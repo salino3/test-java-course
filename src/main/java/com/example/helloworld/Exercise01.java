@@ -71,4 +71,16 @@ public class Exercise01 {
 
         return "F";
     }
+
+    // Crea una
+    // funzione che
+    // riceva un
+    // array di
+
+    // numeri interi (int[]). L'array contiene numeri consecutivi da 1 a $N$, ma uno
+    // di essi manca. La funzione deve trovare e restituire il numero mancante.
+
+    public static int findMissingNumber(int[] numbers) {
+        return 0;
+    }
 }
