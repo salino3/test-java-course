@@ -24,7 +24,7 @@ public class Exercise01 {
     // 'HashMap' use random order for his objects
     static Map<String, Integer> grades = new LinkedHashMap<String, Integer>();
 
-    static List<Integer> listNumbers = new ArrayList<>(List.of(4, 2, 3, 7, 8, 1, 6));
+    static int[] listNumbers = { 4, 10, 3, 7, 8, 9, 6 };
 
     public static void main(String[] args) {
         grades.put("A", 90);
@@ -34,6 +34,9 @@ public class Exercise01 {
         grades.put("E", 50);
 
         System.out.println(getGrade(100));
+
+        System.out.println(findMissingNumber(listNumbers));
+
     }
 
     public static String getGrade(int score) {
@@ -86,12 +89,14 @@ public class Exercise01 {
 
         // numeri interi (int[]). L'array contiene numeri consecutivi da 1 a $N$, ma uno
         // di essi manca. La funzione deve trovare e restituire il numero mancante.
-        int lowerNumber = Collections.min(listNumbers);
-        List<Integer> sortedList = new ArrayList<>(listNumbers);
-        Collections.sort(sortedList);
-        // int lowerNumber = sortedList.get(0);
+        List<Integer> sortedList = Arrays.stream(numbers).boxed().sorted().toList();
+        int lowerNumber = sortedList.get(0);
 
-        for (int num : listNumbers) {
+        for (int num : sortedList) {
+            if (lowerNumber != num) {
+                return lowerNumber;
+            }
+            lowerNumber++;
 
         }
         return 0;
