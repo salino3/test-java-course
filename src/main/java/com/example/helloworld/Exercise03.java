@@ -13,10 +13,14 @@ public class Exercise03 {
     static char symbol = '!';
     static char currency = '$';
 
+    static boolean isStudent = true;
+    static boolean isOnline = true;
+
     public static void main(String[] args) {
 
         System.out.println("This year is " + year);
         System.out.println("The temperature now is " + temperature + "ºC");
         System.out.println("The char is " + symbol);
+        System.out.println("Tom is" + (isStudent ? "" : " not") + " a student");
     }
 }
