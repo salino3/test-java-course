@@ -1,5 +1,7 @@
 package com.example.helloworld;
 
+import javax.swing.plaf.basic.BasicTreeUI.SelectionModelPropertyChangeHandler;
+
 public class Exercise03 {
     static int age;
     static int year = 2026;
@@ -22,5 +24,17 @@ public class Exercise03 {
         System.out.println("The temperature now is " + temperature + "ºC");
         System.out.println("The char is " + symbol);
         System.out.println("Tom is" + (isStudent ? "" : " not") + " a student");
+
+        if (isOnline) {
+            System.out.println("You are online!");
+
+        } else {
+            System.out.println("You are NOT online!");
+        }
+        //
+        String name = "Joe";
+        String surname = "Doe";
+
+        System.out.println("Your complete name is " + name + " " + surname);
     }
 }
