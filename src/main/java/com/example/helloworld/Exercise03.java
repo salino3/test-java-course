@@ -1,5 +1,7 @@
 package com.example.helloworld;
 
+import java.util.List;
+
 import javax.swing.plaf.basic.BasicTreeUI.SelectionModelPropertyChangeHandler;
 
 public class Exercise03 {
@@ -34,7 +36,13 @@ public class Exercise03 {
         //
         String name = "Joe";
         String surname = "Doe";
+        String food = "pizza";
+        String email = "doe@gmail.com";
+        String color = "blue";
 
         System.out.println("Your complete name is " + name + " " + surname);
+        System.out.println("Your email is " + email);
+
+        System.out.println("This is a list of strings: " + List.of(name, surname, food, email, color));
     }
 }
