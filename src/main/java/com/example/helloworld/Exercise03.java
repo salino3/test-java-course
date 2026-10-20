@@ -9,9 +9,14 @@ public class Exercise03 {
     double gpa = 3.5;
     static double temperature = -11.5;
 
+    static char grade = 'A';
+    static char symbol = '!';
+    static char currency = '$';
+
     public static void main(String[] args) {
 
         System.out.println("This year is " + year);
         System.out.println("The temperature now is " + temperature + "ºC");
+        System.out.println("The char is " + symbol);
     }
 }
