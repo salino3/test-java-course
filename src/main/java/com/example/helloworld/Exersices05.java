@@ -32,7 +32,8 @@ public class Exersices05 {
         // loops();
         // methods(friends);
 
-        square();
+        System.out.println(square(3));
+        System.out.println(cube(3));
     }
 
     static void loops() {
@@ -105,8 +106,12 @@ public class Exersices05 {
     }
 
     //
-    public static void square() {
+    public static double square(double number) {
+        return number * number;
+    }
 
+    public static double cube(double number) {
+        return number * number * number;
     }
 
 }
