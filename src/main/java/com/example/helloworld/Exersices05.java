@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exersices05 {
     public static void main(String[] args) {
-        loops();
+        // loops();
         methods();
     }
 
@@ -62,6 +62,14 @@ public class Exersices05 {
     }
 
     static void methods() {
+        happyBirthday();
 
+    }
+
+    static void happyBirthday() {
+        System.out.println("Happy birthday to you!");
+        System.out.println("You are X years old!");
+        System.out.println("Happy birthday to you!");
+        System.out.println("Happy birthday to you!");
     }
 }
