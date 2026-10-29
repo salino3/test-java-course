@@ -30,7 +30,9 @@ public class Exersices05 {
 
     public static void main(String[] args) {
         // loops();
-        methods(friends);
+        // methods(friends);
+
+        square();
     }
 
     static void loops() {
@@ -101,4 +103,10 @@ public class Exersices05 {
         System.out.printf("Happy birthday dear %s!\n", name);
         System.out.println("Happy birthday to you!");
     }
+
+    //
+    public static void square() {
+
+    }
+
 }
