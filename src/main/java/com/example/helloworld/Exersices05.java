@@ -63,13 +63,15 @@ public class Exersices05 {
 
     static void methods() {
         happyBirthday("Joe");
+        happyBirthday("Joe");
 
     }
 
     static void happyBirthday(String name) {
+        System.out.println("-----------------------------------");
         System.out.println("Happy birthday to you!");
         System.out.println("You are " + name + " years old!");
-        System.out.println("Happy birthday to you!");
+        System.out.printf("Happy birthday dear %s!\n", name);
         System.out.println("Happy birthday to you!");
     }
 }
