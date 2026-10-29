@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Exersices05 {
     public static void main(String[] args) {
         loops();
+        methods();
     }
 
     static void loops() {
@@ -60,4 +61,7 @@ public class Exersices05 {
         }
     }
 
+    static void methods() {
+
+    }
 }
