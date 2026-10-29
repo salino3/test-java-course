@@ -1,11 +1,36 @@
 package com.example.helloworld;
 
+import java.util.List;
 import java.util.Scanner;
 
+interface FriendsProps {
+    String getName();
+
+    int getAge();
+}
+
+record FriendRecord(String name, int age) implements FriendsProps {
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public int getAge() {
+        return age;
+    }
+}
+
 public class Exersices05 {
+    static List<FriendsProps> friends = List.of(
+            new FriendRecord("Joe", 30),
+            new FriendRecord("Aldo", 74),
+            new FriendRecord("Gigi", 36),
+            new FriendRecord("Giulia", 40));
+
     public static void main(String[] args) {
         // loops();
-        methods();
+        methods(friends);
     }
 
     static void loops() {
@@ -61,10 +86,11 @@ public class Exersices05 {
         }
     }
 
-    static void methods() {
-        int age = 25;
-        happyBirthday("Joe", age);
-        happyBirthday("Joe", 30);
+    static void methods(List<FriendsProps> friends) {
+
+        for (int i = 0; i < friends.size(); i++) {
+            happyBirthday(friends.get(i).getName(), friends.get(i).getAge());
+        }
 
     }
 
