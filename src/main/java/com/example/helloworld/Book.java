@@ -32,6 +32,15 @@ public class Book {
 
     public void returnBook() {
 
+        boolean isAvailable = available;
+
+        available = true;
+
+        String msg = isAvailable ? "The book has been already returned successfully."
+                : "The book has been returned successfully.";
+
+        System.out.println(msg);
+
     }
 
     // ---------------------------
@@ -40,6 +49,9 @@ public class Book {
 
         book1.printInfo();
         book1.borrowBook();
+        book1.printInfo();
+        book1.returnBook();
+        book1.returnBook();
         book1.printInfo();
     }
 
