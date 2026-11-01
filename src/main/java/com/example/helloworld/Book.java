@@ -6,4 +6,13 @@ public class Book {
     private String author;
     private int pages;
     private boolean available;
+
+    public Book(String initTitle, String initAuthor, int initPages, boolean initAvailable) {
+        title = initTitle;
+        author = initAuthor;
+        pages = initPages;
+        available = initAvailable;
+
+    }
+
 }
