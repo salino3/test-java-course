@@ -15,6 +15,18 @@ public class Book {
 
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getPages() {
+        return pages;
+    }
+
     public void printInfo() {
         String bookAvailable = available ? "is available" : "is not available";
         String result = String.format("The book '%s' with author %s and %d pages %s ", title, author, pages,
@@ -23,7 +35,8 @@ public class Book {
     }
 
     public void borrowBook() {
-        String msg = available ? "The book has been borrowed successfully." : "Sorry, the book is already borrowed.";
+        String msg = available ? "The book " + title + " has been borrowed successfully."
+                : "Sorry, the book " + title + " is already borrowed.";
         if (available) {
             available = false;
         }

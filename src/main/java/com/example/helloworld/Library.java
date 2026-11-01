@@ -1,5 +1,7 @@
 package com.example.helloworld;
 
+import java.util.Arrays;
+
 public class Library {
 
     Book[] books;
@@ -11,8 +13,19 @@ public class Library {
     void listBooks() {
         for (int i = 0; i < books.length; i++) {
             books[i].printInfo();
-
         }
+
+    }
+
+    void borrowBookByTitle(String targetTitle) {
+        Arrays.stream(books)
+                .filter(b -> b.getTitle().equalsIgnoreCase(targetTitle))
+                .findFirst()
+                .ifPresentOrElse(
+                        Book::borrowBook,
+                        () -> System.out.println("Book with title '" + targetTitle + "' not found.")
+
+                );
     }
 
     // ---------------------------
@@ -25,13 +38,14 @@ public class Library {
 
         book1.printInfo();
         book1.borrowBook();
-        // book1.printInfo();
         book1.returnBook();
         book1.returnBook();
-        // book1.printInfo();
 
         Library library1 = new Library(booksArray);
 
         library1.listBooks();
+        library1.borrowBookByTitle("Java Programming");
+        library1.borrowBookByTitle("Java Programming");
+        library1.borrowBookByTitle("Ciao Roma!");
     }
 }
