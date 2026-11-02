@@ -1,45 +1,49 @@
 package com.example.helloworld;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+// import java.util.Arrays;
+import java.util.List;
 
 public class Library {
 
-    Book[] books;
+    // Book[] books;
+    private List<Book> books;
 
-    public Library(Book[] initBooks) {
+    public Library(List<Book> initBooks) {
         books = initBooks;
+    }
+
+    // Second constructor in case I want initialize an empty Library
+    public Library() {
+        this.books = new ArrayList<>();
     }
 
     //
     void listBooks() {
-        for (int i = 0; i < books.length; i++) {
-            books[i].printInfo();
+        for (int i = 0; i < books.size(); i++) {
+            books.get(i).printInfo();
         }
 
     }
 
     //
     void borrowBookByTitle(String targetTitle) {
-        Arrays.stream(books)
+        books.stream()
                 .filter(b -> b.getTitle().equalsIgnoreCase(targetTitle))
                 .findFirst()
                 .ifPresentOrElse(
                         Book::borrowBook,
-                        () -> System.out.println("Book with title '" + targetTitle + "' not found.")
-
-                );
+                        () -> System.out.println("Book with title '" + targetTitle + "' not found."));
     }
 
     //
     void returnBookByTitle(String targetTitle) {
-        Arrays.stream(books)
+        books.stream()
                 .filter(b -> b.getTitle().equalsIgnoreCase(targetTitle))
                 .findFirst()
                 .ifPresentOrElse(
                         Book::returnBook,
-                        () -> System.out.println("Book with title '" + targetTitle + "' not found.")
-
-                );
+                        () -> System.out.println("Book with title '" + targetTitle + "' not found."));
     }
 
     // ---------------------------
@@ -48,7 +52,10 @@ public class Library {
         Book book2 = new Book("Java Programming", "Jane Smith", 350, true);
         Book book3 = new Book("Clean Code", "Robert C. Martin", 464, false);
 
-        Book[] booksArray = { book1, book2, book3, };
+        List<Book> booksArray = new ArrayList<>();
+        booksArray.add(0, book1);
+        booksArray.add(1, book2);
+        booksArray.add(2, book3);
 
         book1.printInfo();
         book1.borrowBook();
