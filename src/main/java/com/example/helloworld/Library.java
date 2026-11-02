@@ -17,12 +17,25 @@ public class Library {
 
     }
 
+    //
     void borrowBookByTitle(String targetTitle) {
         Arrays.stream(books)
                 .filter(b -> b.getTitle().equalsIgnoreCase(targetTitle))
                 .findFirst()
                 .ifPresentOrElse(
                         Book::borrowBook,
+                        () -> System.out.println("Book with title '" + targetTitle + "' not found.")
+
+                );
+    }
+
+    //
+    void returnBookByTitle(String targetTitle) {
+        Arrays.stream(books)
+                .filter(b -> b.getTitle().equalsIgnoreCase(targetTitle))
+                .findFirst()
+                .ifPresentOrElse(
+                        Book::returnBook,
                         () -> System.out.println("Book with title '" + targetTitle + "' not found.")
 
                 );
@@ -45,6 +58,8 @@ public class Library {
 
         library1.listBooks();
         library1.borrowBookByTitle("Java Programming");
+        library1.returnBookByTitle("Java Programming");
+        library1.returnBookByTitle("Java Programming");
         library1.borrowBookByTitle("Java Programming");
         library1.borrowBookByTitle("Ciao Roma!");
     }
