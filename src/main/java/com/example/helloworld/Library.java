@@ -27,6 +27,12 @@ public class Library {
     }
 
     //
+    public void addBook(Book book) {
+        books.add(book);
+        System.out.println("Added book " + book.getTitle() + " in to the library");
+    }
+
+    //
     void borrowBookByTitle(String targetTitle) {
         books.stream()
                 .filter(b -> b.getTitle().equalsIgnoreCase(targetTitle))
@@ -51,6 +57,7 @@ public class Library {
         Book book1 = new Book("El viaje de Joe", "Joe", 120, true);
         Book book2 = new Book("Java Programming", "Jane Smith", 350, true);
         Book book3 = new Book("Clean Code", "Robert C. Martin", 464, false);
+        Book bookCreated1 = new Book("`La livella", "Totò", 20, true);
 
         List<Book> booksArray = new ArrayList<>();
         booksArray.add(0, book1);
@@ -70,5 +77,9 @@ public class Library {
         library1.returnBookByTitle("Java Programming");
         library1.borrowBookByTitle("Java Programming");
         library1.borrowBookByTitle("Ciao Roma!");
+        System.out.println("------------------------------------");
+        library1.addBook(bookCreated1);
+        library1.listBooks();
+
     }
 }
