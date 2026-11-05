@@ -30,7 +30,7 @@ public class Library {
     }
 
     //
-    int numbersBooks() {
+    protected int numbersBooks() {
         System.out.println("the library has " + books.size() + " books");
         return books.size();
     }
