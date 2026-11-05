@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class District {
 
@@ -13,7 +14,15 @@ public class District {
         libraries = initLibraries;
         name = initName;
         numberUsers = initNumbersUsers;
-        numberBooks = libraries.size();
+        numberBooks = numbersBooksFn();
+    }
+
+    public int numbersBooksFn() {
+        int result = libraries.stream()
+                .mapToInt(Library::numbersBooks).sum();
+
+        System.out.println("The district has " + libraries.size() + " and in total has " + result + " books");
+        return result;
     }
 
     public List<Library> getLibraries() {

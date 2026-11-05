@@ -89,6 +89,7 @@ public class Library {
         System.out.println("------------------------------------");
         library1.addBook(bookCreated1);
         library1.listBooks();
+        library1.numbersBooks();
 
     }
 }
