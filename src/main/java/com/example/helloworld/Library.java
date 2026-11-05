@@ -18,12 +18,21 @@ public class Library {
         this.books = new ArrayList<>();
     }
 
+    public List<Book> getBooks() {
+        return books;
+    }
+
     //
     void listBooks() {
         for (int i = 0; i < books.size(); i++) {
             books.get(i).printInfo();
         }
+    }
 
+    //
+    int numbersBooks() {
+        System.out.println("the library has " + books.size() + " books");
+        return books.size();
     }
 
     //
