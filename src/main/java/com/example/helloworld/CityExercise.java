@@ -42,8 +42,8 @@ public class CityExercise {
         myLibrary4.addBook(book6);
 
         List<Library> librariesList2 = new ArrayList<>();
-        librariesList2.add(myLibrary);
-        librariesList2.add(myLibrary2);
+        librariesList2.add(myLibrary3);
+        librariesList2.add(myLibrary4);
 
         District trastevereDistrict = new District(librariesList2, "Trastevere", 12000);
 
@@ -53,6 +53,7 @@ public class CityExercise {
         roma.addDistrict(trastevereDistrict);
 
         System.out.println(roma.calculateTotalBooksInCity());
+        roma.getAllLibraries().get(3).borrowBookByTitle("Typescript");
         roma.printCityInfo();
     }
 }

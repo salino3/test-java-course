@@ -35,7 +35,11 @@ public class City {
     }
 
     public List<Library> getAllLibraries() {
-        return allLibraries;
+        return districts.stream()
+                .flatMap(d -> d.getLibraries().stream())
+                .distinct()
+                .toList();
+
     }
 
     public String getName() {
@@ -74,9 +78,9 @@ public class City {
     }
 
     public void printCityInfo() {
-        System.out.println("City: " + name + " (Founded: " + (yearFoundation != 0 ? yearFoundation : "Unknown") + ")");
+        System.out.println("City: " + name + " (Founded: " + yearFoundation + ")");
         System.out.println("Total Districts: " + districts.size());
-        System.out.println("Total Independent/City-level Libraries: " + allLibraries.size());
+        System.out.println("Total Libraries across all Districts: " + getAllLibraries().size());
     }
 
 }
