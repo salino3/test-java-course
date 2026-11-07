@@ -58,9 +58,19 @@ public class City {
         this.allLibraries.add(library);
     }
 
+    public int calculateTotalBooksInCity() {
+        return districts.stream()
+                .mapToInt(District::getNumberBooks)
+                .sum();
+    }
+
     public void printCityInfo() {
         System.out.println("City: " + name + " (Founded: " + (yearFoundation != 0 ? yearFoundation : "Unknown") + ")");
         System.out.println("Total Districts: " + districts.size());
         System.out.println("Total Independent/City-level Libraries: " + allLibraries.size());
+    }
+
+    static public void main(String[] args) {
+
     }
 }
