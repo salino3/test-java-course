@@ -16,13 +16,13 @@ public class Library {
         id = counterId++;
     }
 
-    public int getId() {
-        return id;
-    }
-
     // Second constructor in case I want initialize an empty Library
     public Library() {
         this.books = new ArrayList<>();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public List<Book> getBooks() {
