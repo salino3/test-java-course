@@ -29,6 +29,26 @@ public class City {
         this.id = counterId++;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public List<Library> getAllLibraries() {
+        return allLibraries;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<District> getDistricts() {
+        return districts;
+    }
+
+    public byte getYearFoundation() {
+        return yearFoundation;
+    }
+
     //
     public void addDistrict(District district) {
         this.districts.add(district);
