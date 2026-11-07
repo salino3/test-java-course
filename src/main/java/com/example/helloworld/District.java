@@ -5,6 +5,8 @@ import java.util.List;
 
 public class District {
 
+    static private int counterId = 1;
+    private int id;
     private List<Library> libraries;
     private String name;
     private int numberUsers;
@@ -15,6 +17,11 @@ public class District {
         name = initName;
         numberUsers = initNumbersUsers;
         numberBooks = calculateTotalBooks();
+        id = counterId++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int calculateTotalBooks() {

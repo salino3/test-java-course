@@ -2,6 +2,8 @@ package com.example.helloworld;
 
 public class Book {
 
+    static private int counterId = 1;
+    private int id;
     private String title;
     private String author;
     private int pages;
@@ -12,7 +14,12 @@ public class Book {
         author = initAuthor;
         pages = initPages;
         available = initAvailable;
+        id = counterId++;
 
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {

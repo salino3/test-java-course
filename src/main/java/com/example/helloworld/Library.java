@@ -6,11 +6,18 @@ import java.util.List;
 
 public class Library {
 
+    static private int counterId = 1;
+    private int id;
     // Book[] books;
     private List<Book> books;
 
     public Library(List<Book> initBooks) {
         books = initBooks;
+        id = counterId++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     // Second constructor in case I want initialize an empty Library
@@ -90,6 +97,7 @@ public class Library {
         library1.addBook(bookCreated1);
         library1.listBooks();
         library1.numbersBooks();
-
+        System.out.println(book2.getId());
+        System.out.println(book1.getId());
     }
 }
