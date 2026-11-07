@@ -8,20 +8,21 @@ public class City {
     static private int counterId = 1;
     private int id;
     String name;
-    byte yearFoundation;
+    int yearFoundation;
     // Person mayor;
     // Person citizens;
     private List<District> districts;
     private List<Library> allLibraries;
 
-    public City(String name) {
+    public City(String name, int yearFoundation) {
         this.name = name;
+        this.yearFoundation = yearFoundation;
         this.districts = new ArrayList<>();
         this.allLibraries = new ArrayList<>();
         this.id = counterId++;
     }
 
-    public City(String name, byte yearFoundation, List<District> districts, List<Library> allLibraries) {
+    public City(String name, int yearFoundation, List<District> districts, List<Library> allLibraries) {
         this.name = name;
         this.yearFoundation = yearFoundation;
         this.districts = districts;
@@ -45,7 +46,7 @@ public class City {
         return districts;
     }
 
-    public byte getYearFoundation() {
+    public int getYearFoundation() {
         return yearFoundation;
     }
 
