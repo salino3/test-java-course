@@ -9,8 +9,8 @@ public class City {
     private int id;
     String name;
     int yearFoundation;
-    // Person mayor;
-    // Person citizens;
+    Person emperor;
+    List<Person> citizens;
     private List<District> districts;
     private List<Library> allLibraries;
 
@@ -50,6 +50,14 @@ public class City {
         return yearFoundation;
     }
 
+    public List<Person> getCitizens() {
+        return citizens;
+    }
+
+    public Person getEmperor() {
+        return emperor;
+    }
+
     //
     public void addDistrict(District district) {
         this.districts.add(district);
@@ -71,7 +79,4 @@ public class City {
         System.out.println("Total Independent/City-level Libraries: " + allLibraries.size());
     }
 
-    static public void main(String[] args) {
-
-    }
 }

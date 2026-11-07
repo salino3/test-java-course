@@ -69,35 +69,35 @@ public class Library {
     }
 
     // ---------------------------
-    public static void main(String[] args) {
-        Book book1 = new Book("El viaje de Joe", "Joe", 120, true);
-        Book book2 = new Book("Java Programming", "Jane Smith", 350, true);
-        Book book3 = new Book("Clean Code", "Robert C. Martin", 464, false);
-        Book bookCreated1 = new Book("`La livella", "Totò", 20, true);
+    // public static void main(String[] args) {
+    // Book book1 = new Book("El viaje de Joe", "Joe", 120, true);
+    // Book book2 = new Book("Java Programming", "Jane Smith", 350, true);
+    // Book book3 = new Book("Clean Code", "Robert C. Martin", 464, false);
+    // Book bookCreated1 = new Book("`La livella", "Totò", 20, true);
 
-        List<Book> booksArray = new ArrayList<>();
-        booksArray.add(0, book1);
-        booksArray.add(1, book2);
-        booksArray.add(2, book3);
+    // List<Book> booksArray = new ArrayList<>();
+    // booksArray.add(0, book1);
+    // booksArray.add(1, book2);
+    // booksArray.add(2, book3);
 
-        book1.printInfo();
-        book1.borrowBook();
-        book1.returnBook();
-        book1.returnBook();
+    // book1.printInfo();
+    // book1.borrowBook();
+    // book1.returnBook();
+    // book1.returnBook();
 
-        Library library1 = new Library(booksArray);
+    // Library library1 = new Library(booksArray);
 
-        library1.listBooks();
-        library1.borrowBookByTitle("Java Programming");
-        library1.returnBookByTitle("Java Programming");
-        library1.returnBookByTitle("Java Programming");
-        library1.borrowBookByTitle("Java Programming");
-        library1.borrowBookByTitle("Ciao Roma!");
-        System.out.println("------------------------------------");
-        library1.addBook(bookCreated1);
-        library1.listBooks();
-        library1.numbersBooks();
-        System.out.println(book2.getId());
-        System.out.println(book1.getId());
-    }
+    // library1.listBooks();
+    // library1.borrowBookByTitle("Java Programming");
+    // library1.returnBookByTitle("Java Programming");
+    // library1.returnBookByTitle("Java Programming");
+    // library1.borrowBookByTitle("Java Programming");
+    // library1.borrowBookByTitle("Ciao Roma!");
+    // System.out.println("------------------------------------");
+    // library1.addBook(bookCreated1);
+    // library1.listBooks();
+    // library1.numbersBooks();
+    // System.out.println(book2.getId());
+    // System.out.println(book1.getId());
+    // }
 }
