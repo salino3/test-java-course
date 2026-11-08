@@ -3,7 +3,7 @@ package com.example.helloworld;
 import java.util.ArrayList;
 import java.util.List;
 
-public class City {
+public class City extends BaseEntity {
 
     static private int counterId = 1;
     private int id;
@@ -15,6 +15,7 @@ public class City {
     private List<Library> allLibraries;
 
     public City(String name, int yearFoundation) {
+        super();
         this.name = name;
         this.yearFoundation = yearFoundation;
         this.districts = new ArrayList<>();
@@ -28,6 +29,11 @@ public class City {
         this.districts = districts;
         this.allLibraries = allLibraries;
         this.id = counterId++;
+    }
+
+    @Override
+    public int getGlobalId() {
+        return super.getGlobalId();
     }
 
     public int getId() {

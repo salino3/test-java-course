@@ -1,6 +1,6 @@
 package com.example.helloworld;
 
-public class Book {
+public class Book extends BaseEntity {
 
     static private int counterId = 1;
     private int id;
@@ -10,12 +10,18 @@ public class Book {
     private boolean available;
 
     public Book(String initTitle, String initAuthor, int initPages, boolean initAvailable) {
-        title = initTitle;
-        author = initAuthor;
-        pages = initPages;
-        available = initAvailable;
-        id = counterId++;
+        super();
+        this.title = initTitle;
+        this.author = initAuthor;
+        this.pages = initPages;
+        this.available = initAvailable;
+        this.id = counterId++;
 
+    }
+
+    @Override
+    public int getGlobalId() {
+        return super.getGlobalId();
     }
 
     public int getId() {

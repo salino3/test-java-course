@@ -4,7 +4,7 @@ enum RolePerson {
     citizen, slave, legionary, emperor, oracle
 };
 
-public class Person {
+public class Person extends BaseEntity {
 
     static private int counterId = 1;
     private int id;
@@ -13,10 +13,16 @@ public class Person {
     private int age;
 
     public Person(String name, RolePerson role, int age) {
+        super();
         this.name = name;
         this.role = role;
         this.age = age;
-        id = counterId++;
+        this.id = counterId++;
+    }
+
+    @Override
+    public int getGlobalId() {
+        return super.getGlobalId();
     }
 
     public int getId() {

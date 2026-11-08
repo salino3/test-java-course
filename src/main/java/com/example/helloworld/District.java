@@ -1,9 +1,8 @@
 package com.example.helloworld;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class District {
+public class District extends BaseEntity {
 
     static private int counterId = 1;
     private int id;
@@ -13,11 +12,17 @@ public class District {
     private int numberBooks;
 
     public District(List<Library> initLibraries, String initName, int initNumbersUsers) {
+        super();
         libraries = initLibraries;
         name = initName;
         numberUsers = initNumbersUsers;
         numberBooks = calculateTotalBooks();
         id = counterId++;
+    }
+
+    @Override
+    public int getGlobalId() {
+        return super.getGlobalId();
     }
 
     public int getId() {

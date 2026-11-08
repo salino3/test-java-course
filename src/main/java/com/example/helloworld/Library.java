@@ -4,7 +4,7 @@ import java.util.ArrayList;
 // import java.util.Arrays;
 import java.util.List;
 
-public class Library {
+public class Library extends BaseEntity {
 
     static private int counterId = 1;
     private int id;
@@ -12,13 +12,19 @@ public class Library {
     private List<Book> books;
 
     public Library(List<Book> initBooks) {
-        books = initBooks;
-        id = counterId++;
+        super();
+        this.books = initBooks;
+        this.id = counterId++;
     }
 
     // Second constructor in case I want initialize an empty Library
     public Library() {
         this.books = new ArrayList<>();
+    }
+
+    @Override
+    public int getGlobalId() {
+        return super.getGlobalId();
     }
 
     public int getId() {
