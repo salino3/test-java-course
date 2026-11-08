@@ -63,5 +63,10 @@ public class CityExercise {
         roma.addCitizen(augustus);
         roma.addCitizen(mario);
         roma.printCityInfo();
+        System.out.println(augustus.getName() + " Global ID: " + augustus.getGlobalId());
+        System.out.println(augustus.getName() + " Personal ID: " + augustus.getId());
+        System.out.println(mario.getName() + " Personal ID: " + mario.getId());
+        System.out.println(roma.getName() + " Global ID: " + roma.getGlobalId());
+
     }
 }
