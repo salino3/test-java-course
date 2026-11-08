@@ -55,5 +55,13 @@ public class CityExercise {
         System.out.println(roma.calculateTotalBooksInCity());
         roma.getAllLibraries().get(3).borrowBookByTitle("Typescript");
         roma.printCityInfo();
+        // -----------------------------
+        Emperor augustus = new Emperor("Iulia", "Ottaviano Augusto", 76);
+
+        Person mario = new Person("Mario", RolePerson.legionary, 39);
+
+        roma.addCitizen(augustus);
+        roma.addCitizen(mario);
+        roma.printCityInfo();
     }
 }

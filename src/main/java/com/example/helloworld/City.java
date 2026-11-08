@@ -20,13 +20,16 @@ public class City extends BaseEntity {
         this.yearFoundation = yearFoundation;
         this.districts = new ArrayList<>();
         this.allLibraries = new ArrayList<>();
+        this.citizens = new ArrayList<>();
         this.id = counterId++;
     }
 
-    public City(String name, int yearFoundation, List<District> districts, List<Library> allLibraries) {
+    public City(String name, int yearFoundation, List<District> districts, List<Person> citizens,
+            List<Library> allLibraries) {
         this.name = name;
         this.yearFoundation = yearFoundation;
         this.districts = districts;
+        this.citizens = citizens;
         this.allLibraries = allLibraries;
         this.id = counterId++;
     }
@@ -83,10 +86,23 @@ public class City extends BaseEntity {
                 .sum();
     }
 
+    public void addCitizen(Person person) {
+        if (person.getRole() == RolePerson.emperor) {
+            this.emperor = person;
+        }
+        this.citizens.add(person);
+    }
+
     public void printCityInfo() {
         System.out.println("City: " + name + " (Founded: " + yearFoundation + ")");
         System.out.println("Total Districts: " + districts.size());
+        System.out.println("Total Citizens: " + citizens.size());
         System.out.println("Total Libraries across all Districts: " + getAllLibraries().size());
+        if (this.getEmperor() != null) {
+            System.out.println("The emperor of the city is: " + emperor.getName());
+        } else {
+            System.out.println("No emperor currently reigns.");
+        }
     }
 
 }
